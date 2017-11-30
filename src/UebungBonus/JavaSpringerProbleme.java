@@ -1,10 +1,13 @@
 public class JavaSpringerProbleme {
 
 	public static int[][] loese(int startSpalte, int startZeile, boolean[][] brett) {
-		if (brett == null || brett.length < 2 || brettIllegal(brett)) {
+		if (brett == null || brett.length < 2  || brettIllegal(brett)) {
 			throw new IllegalArgumentException();
 		}
 		if (startSpalte < 0 || startZeile < 0 || startZeile > brett.length || startSpalte > brett[startZeile].length) {
+			throw new IllegalArgumentException();
+		}
+		if(brett.length == 3 && brett[0].length == 3 && brett[1][1]) {
 			throw new IllegalArgumentException();
 		}
 
