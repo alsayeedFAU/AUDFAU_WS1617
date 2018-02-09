@@ -7,10 +7,23 @@ public class GameOfDice {
 	// returns 2 for player 2
 	// returns -1 if the array is too short or too long
 	public static int game(String args[]) {
-		if(args.length != 4) {
-			return -1;
-		}
-		return (Integer.parseInt(args[0]) + Integer.parseInt(args[1])) == Integer.parseInt(args[2]) + Integer.parseInt(args[3]) ? 0 : Integer.parseInt(args[0]) + Integer.parseInt(args[1]) > Integer.parseInt(args[2]) + Integer.parseInt(args[3]) ? 1 : 2;
+		// TODO: implement logic here
+		int tmp = 0;
+		int spieler1 = Integer.parseInt(args[0])+Integer.parseInt(args[1]);
+		int spieler2 = Integer.parseInt(args[2])+Integer.parseInt(args[3]);
+		
+		if (args.length !=4)
+			tmp=-1;
+		else if (spieler1==spieler2)
+			tmp=0;
+		else if (spieler1<spieler2)
+			tmp=2;
+		else
+			tmp=1;
+		
+		return tmp;
+		
+		
 	}
 
 	// DON'T modify this part

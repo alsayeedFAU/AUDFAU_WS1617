@@ -36,20 +36,25 @@ public class Solver {
 	public static int solve(int x, int y) {
 		if (x < 0 || x >= 10 || y < 0 || y >= 10) {
 			firstTrue();
+			System.out.println("firstTrue");
 			return -1;
 		} else {
 			firstFalse();
+			System.out.println("firstFalse");
 			while (y != 0) {
 				loopRun();
+				System.out.println("loopRun");
 				int t = y;
 				y = x % y;
 				x = t;
 			}
 			if (x == 3) {
 				secondTrue();
+				System.out.println("secondTrue");
 				return -2;
 			} else {
 				secondFalse();
+				System.out.println("secondFalse");
 				return y;
 			}
 		}
