@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import java.util.*;
 import org.junit.*;
 
+import com.sun.xml.internal.bind.v2.runtime.Name;
+
 public class RadixPublicTest {
 
 	@Test(timeout=100)
@@ -12,6 +14,8 @@ public class RadixPublicTest {
 		for(int i=0; i<b.length(); ++i){
 			c += NameSorter.getCharOrDefault(a, i);
 		}
+		System.out.println(c);
+		System.out.println(b);
 		assertTrue(c.compareTo(b) < 0);
 	}
 	
@@ -22,7 +26,7 @@ public class RadixPublicTest {
 		list.add(new NameEntry("Mueller","David"));
 		list.add(new NameEntry("Schmitt","Conrad"));
 		list.add(new NameEntry("Mueller","Adam"));
-		list = NameSorter.radixOneStep(list, true, 0);
+		list = NameSorter.radixOneStep(list, true, 0);		
 		assertEquals("Adam", list.get(0).firstName);
 		assertEquals("Bernd", list.get(1).firstName);
 		assertEquals("Conrad", list.get(2).firstName);
